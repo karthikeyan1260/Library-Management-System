@@ -135,7 +135,7 @@ Library-Management-System/
 
 **Karthikeyan**
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/karthikeyans12/) and explore my projects on [GitHub](https://github.com/).
+Connect with me on [LinkedIn](https://www.linkedin.com/in/karthikeyans12/) and explore my projects on [GitHub](https://github.com/karthikeyan1260).
 
 ## ⭐ Support
 
