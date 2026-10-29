@@ -1,37 +1,146 @@
-📚 **Project: Library Management System Using Python**
+# 📚 Library Management System Using Python
 
-I'm excited to share my Python project, **Library Management System**, developed to understand object-oriented programming (OOP) concepts and implement real-world library operations.
+A simple **Library Management System** built with Python to manage book details, calculate due dates, track submission status, and calculate fines for overdue books. This project demonstrates core **Object-Oriented Programming (OOP)** concepts, including classes, objects, and inheritance.
 
-### 🔹 1. Project Overview
-The Library Management System is a Python-based application that manages book details, issue dates, submission dates, due dates, and overdue fine calculations.
+## 📌 Project Overview
 
-### 🔹 2. Problem Statement
-Managing book lending manually can make it difficult to track due dates and calculate late submission fines accurately. This project addresses these challenges by automating date calculations, tracking book submissions, and calculating fines for overdue books.
+The Library Management System helps track the borrowing and return process for individual books. It calculates the due date based on the issue date and borrowing period, compares the due date with the actual submission date, and calculates the applicable fine.
 
-### 🔹 3. Technology Stack
-💻 **Programming Language:** Python  
-🧩 **Concepts:** Object-Oriented Programming (OOP), Classes, Objects, Inheritance  
-📅 **Date Handling:** Custom date conversion and calculation logic  
-🛠️ **Environment:** Jupyter Notebook
+## 🎯 Problem Statement
 
-### 🔹 4. How It Works
+Manual tracking of book issue dates, due dates, and return dates can lead to calculation errors. This project provides a Python-based solution to simplify date calculations and determine overdue fines accurately.
+
+## 🛠️ Technology Stack
+
+- **Programming Language:** Python
+- **Environment:** Jupyter Notebook
+- **Concepts:** Object-Oriented Programming (OOP)
+- **OOP Features:** Classes, Objects, Inheritance
+- **Logic Implemented:** Date calculations, leap-year handling, conditional statements, and fine calculation
+
+## ⚙️ Features
+
+- 📖 Accepts book name and book ID.
+- 📅 Takes the issue date, borrowing period, and submission date as input.
+- 🗓️ Calculates the due date automatically.
+- ✅ Identifies whether a book was submitted on time or late.
+- ⏳ Calculates the number of overdue days.
+- 💰 Calculates a fine of **₹10 per overdue day**.
+- 📆 Handles leap years and varying month lengths.
+
+## 🔄 How It Works
+
 1. Enter the book name and book ID.
-2. Provide the issue date and borrowing period.
-3. Enter the book submission date.
-4. Calculate the due date based on the issue date and borrowing period.
-5. Compare the submission date with the due date.
-6. Calculate the overdue days and fine, if applicable.
+2. Enter the issue date in `DD/MM/YYYY` format.
+3. Specify the borrowing period in days.
+4. Enter the actual submission date.
+5. The program calculates the due date.
+6. It compares the submission date with the due date.
+7. If the book is returned late, the program calculates the overdue days and total fine.
+8. The complete book and submission details are displayed.
 
-💰 **Fine Calculation:** ₹10 per overdue day.
+## 💻 Sample Output
 
-### 🔹 5. Key Learning Outcomes
-✅ Implemented classes and objects in Python.  
-✅ Practiced inheritance using a `Book` class and a `LibraryManagement` class.  
-✅ Developed custom date calculation logic, including leap-year handling.  
-✅ Applied conditional statements to determine submission status and calculate fines.
+```text
+----- Library Management -----
+Book Name        : Python Basics and Core
+Book ID          : PY1010
+Issued Date      : 10/10/2026
+Period           : 30 Days
+Due Date         : 09/11/2026
+Submission Date  : 15/11/2026
+Status           : Submitted Late
+Overdue Days     : 6
+Fine Per Day     : ₹ 10
+Total Fine       : ₹ 60
+```
 
-This project helped me strengthen my Python fundamentals and understand how programming concepts can solve practical problems.
+## 🧮 Fine Calculation
 
-I'm looking forward to building more projects and continuously improving my development skills! 🚀
+**Formula:**
 
-#Python #PythonProgramming #OOP #LibraryManagementSystem #LearningByDoing #SoftwareDevelopment #ProjectShowcase
+`Total Fine = Overdue Days × Fine Per Day`
+
+**Example:**
+
+- Due date: 09/11/2026
+- Submission date: 15/11/2026
+- Overdue days: 6
+- Fine per day: ₹10
+- **Total fine: ₹60**
+
+If the book is submitted on or before the due date, no fine is charged.
+
+## 🚀 How to Run the Project
+
+### Prerequisites
+
+- Python 3
+- Jupyter Notebook or JupyterLab
+
+### Steps
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd YOUR-REPOSITORY
+   ```
+
+3. Open the notebook:
+
+   ```bash
+   jupyter notebook
+   ```
+
+4. Open `Library Management System.ipynb` and run the cells.
+
+**Note:** Replace `YOUR-USERNAME` and `YOUR-REPOSITORY` with your actual GitHub username and repository name.
+
+## 📂 Project Structure
+
+```text
+Library-Management-System/
+│
+├── Library Management System.ipynb
+└── README.md
+```
+
+## 📚 Concepts Learned
+
+- Creating classes and objects in Python
+- Implementing inheritance using `Book` and `LibraryManagement`
+- Using constructors and `super()`
+- Working with user input
+- Implementing custom date calculations
+- Handling leap years and month lengths
+- Applying conditional logic
+- Calculating overdue fines
+
+## 🔮 Future Enhancements
+
+- Support multiple books and borrowers.
+- Maintain a record of issued and returned books.
+- Add book availability tracking.
+- Store library records using a database.
+- Implement search, update, and delete operations.
+- Add input validation and a graphical user interface.
+
+## 👨‍💻 Author
+
+**Karthikeyan**
+
+Connect with me on [LinkedIn](https://www.linkedin.com/in/karthikeyans12/) and explore my projects on [GitHub](https://github.com/).
+
+## ⭐ Support
+
+If you find this project useful, consider giving the repository a star!
+
+---
+
+*Built with Python as a hands-on project to strengthen programming and OOP fundamentals.*
