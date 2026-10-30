@@ -1,108 +1,70 @@
-# 📚 Library Management System Using Python
+# 📚 Library Management System using Python
 
-A simple **Library Management System** built with Python to manage book details, calculate due dates, track submission status, and calculate fines for overdue books. This project demonstrates core **Object-Oriented Programming (OOP)** concepts, including classes, objects, and inheritance.
+A simple **Library Management System** developed using Python and Object-Oriented Programming (OOP). This project manages book details, calculates due dates, checks submission status, and automatically calculates fines for overdue book returns.
 
 ## 📌 Project Overview
 
-The Library Management System helps track the borrowing and return process for individual books. It calculates the due date based on the issue date and borrowing period, compares the due date with the actual submission date, and calculates the applicable fine.
+The Library Management System is designed to simplify book return tracking by calculating due dates based on the issue date and borrowing period.
+
+It also identifies whether a book is returned on time or late and calculates the applicable fine based on the number of overdue days.
 
 ## 🎯 Problem Statement
 
-Manual tracking of book issue dates, due dates, and return dates can lead to calculation errors. This project provides a Python-based solution to simplify date calculations and determine overdue fines accurately.
+Manually calculating book due dates and overdue fines can be time-consuming and may lead to calculation errors.
+
+This project provides a Python-based solution that automates date calculations, submission tracking, and fine calculations.
 
 ## 🛠️ Technology Stack
 
 - **Programming Language:** Python
-- **Environment:** Jupyter Notebook
 - **Concepts:** Object-Oriented Programming (OOP)
-- **OOP Features:** Classes, Objects, Inheritance
-- **Logic Implemented:** Date calculations, leap-year handling, conditional statements, and fine calculation
+- **Inheritance:** Parent and Child Classes
+- **Constructors:** `__init__()`
+- **Date Handling:** Custom Date Calculation Logic
+- **Conditional Statements:** `if-else`
+- **Loops:** `for` and `while`
+- **User Input:** `input()`
 
-## ⚙️ Features
+## ⚙️ How It Works
 
-- 📖 Accepts book name and book ID.
-- 📅 Takes the issue date, borrowing period, and submission date as input.
-- 🗓️ Calculates the due date automatically.
-- ✅ Identifies whether a book was submitted on time or late.
-- ⏳ Calculates the number of overdue days.
-- 💰 Calculates a fine of **₹10 per overdue day**.
-- 📆 Handles leap years and varying month lengths.
+1. Enter the book name.
+2. Enter the book ID.
+3. Provide the book issue date in `DD/MM/YYYY` format.
+4. Enter the borrowing period in days.
+5. Provide the book submission date.
+6. The system calculates the due date.
+7. It compares the submission date with the due date.
+8. If the book is returned late, the system calculates the overdue days and total fine.
 
-## 🔄 How It Works
+## 💰 Fine Calculation
 
-1. Enter the book name and book ID.
-2. Enter the issue date in `DD/MM/YYYY` format.
-3. Specify the borrowing period in days.
-4. Enter the actual submission date.
-5. The program calculates the due date.
-6. It compares the submission date with the due date.
-7. If the book is returned late, the program calculates the overdue days and total fine.
-8. The complete book and submission details are displayed.
-
-## 💻 Sample Output
-
-```text
------ Library Management -----
-Book Name        : Python Basics and Core
-Book ID          : PY1010
-Issued Date      : 10/10/2026
-Period           : 30 Days
-Due Date         : 09/11/2026
-Submission Date  : 15/11/2026
-Status           : Submitted Late
-Overdue Days     : 6
-Fine Per Day     : ₹ 10
-Total Fine       : ₹ 60
-```
-
-## 🧮 Fine Calculation
+The system applies a fixed fine of **₹10 per overdue day**.
 
 **Formula:**
 
-`Total Fine = Overdue Days × Fine Per Day`
+```python
+Total Fine = Overdue Days * Fine Per Day
+```
 
-**Example:**
+Example:
 
-- Due date: 09/11/2026
-- Submission date: 15/11/2026
-- Overdue days: 6
-- Fine per day: ₹10
-- **Total fine: ₹60**
+- Fine Per Day = ₹10
+- Overdue Days = 5
+- Total Fine = ₹50
 
-If the book is submitted on or before the due date, no fine is charged.
+## 🧠 Key Features
 
-## 🚀 How to Run the Project
+- Book details management.
+- Automatic due-date calculation.
+- Custom date conversion logic.
+- Leap-year calculation.
+- Handles different month lengths.
+- Checks book submission status.
+- Calculates overdue days.
+- Automatically calculates late submission fines.
+- Uses inheritance without the `super()` function.
 
-### Prerequisites
-
-- Python 3
-- Jupyter Notebook or JupyterLab
-
-### Steps
-
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd YOUR-REPOSITORY
-   ```
-
-3. Open the notebook:
-
-   ```bash
-   jupyter notebook
-   ```
-
-4. Open `Library Management System.ipynb` and run the cells.
-
-**Note:** Replace `YOUR-USERNAME` and `YOUR-REPOSITORY` with your actual GitHub username and repository name.
-
-## 📂 Project Structure
+## 🏗️ Project Structure
 
 ```text
 Library-Management-System/
@@ -111,36 +73,108 @@ Library-Management-System/
 └── README.md
 ```
 
-## 📚 Concepts Learned
+## 💻 Code Concepts Implemented
 
-- Creating classes and objects in Python
-- Implementing inheritance using `Book` and `LibraryManagement`
-- Using constructors and `super()`
-- Working with user input
-- Implementing custom date calculations
-- Handling leap years and month lengths
-- Applying conditional logic
-- Calculating overdue fines
+### 1. Classes and Objects
 
-## 🔮 Future Enhancements
+Created two classes:
 
-- Support multiple books and borrowers.
-- Maintain a record of issued and returned books.
-- Add book availability tracking.
-- Store library records using a database.
-- Implement search, update, and delete operations.
-- Add input validation and a graphical user interface.
+- `Book` – Stores book name and book ID.
+- `LibraryManagement` – Manages issue dates, borrowing periods, submission dates, and fine calculations.
+
+### 2. Inheritance
+
+The `LibraryManagement` class inherits from the `Book` class.
+
+```python
+class LibraryManagement(Book):
+```
+
+### 3. Parent Constructor Without super()
+
+Initialized parent-class attributes directly using:
+
+```python
+Book.__init__(self, Book_Name, Book_ID)
+```
+
+### 4. Leap Year Calculation
+
+Implemented custom logic to identify leap years.
+
+```python
+def is_leap_year(self, Year):
+    return Year % 400 == 0 or (Year % 4 == 0 and Year % 100 != 0)
+```
+
+### 5. Fine Calculation
+
+Calculates the fine based on overdue days.
+
+```python
+Overdue_Days = Submission_Total - Due_Total
+Fine = Overdue_Days * self.Fine_Per_Day
+```
+
+## 📊 Sample Output
+
+```text
+Enter Book Name: Python Programming
+Enter Book ID: B101
+Enter Issued Date (DD/MM/YYYY): 01/10/2026
+Enter Period (Days): 10
+Enter Submission Date (DD/MM/YYYY): 16/10/2026
+
+----- Library Management -----
+Book Name        : Python Programming
+Book ID          : B101
+Issued Date      : 01/10/2026
+Period           : 10 Days
+Due Date         : 11/10/2026
+Submission Date  : 16/10/2026
+Status           : Submitted Late
+Overdue Days     : 5
+Fine Per Day     : ₹ 10
+Total Fine       : ₹ 50
+```
+
+## 🌍 Real-World Applications
+
+- School and college libraries.
+- Public library management.
+- Corporate libraries.
+- Book lending services.
+- Educational institutions.
+
+## 📚 My Learnings
+
+Through this project, I gained practical knowledge of:
+
+- Python Object-Oriented Programming.
+- Classes, objects, and inheritance.
+- Constructor implementation.
+- Date calculation algorithms.
+- Leap-year logic.
+- Conditional statements and loops.
+- Implementing real-world business logic.
+
+## 🚀 Future Enhancements
+
+- Multiple book management.
+- Student and member registration.
+- Book availability tracking.
+- Database integration using SQLite or MySQL.
+- Book issue and return history.
+- Graphical User Interface (GUI).
 
 ## 👨‍💻 Author
 
 **Karthikeyan**
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/karthikeyans12/) and explore my projects on [GitHub](https://github.com/karthikeyan1260).
-
-## ⭐ Support
-
-If you find this project useful, consider giving the repository a star!
+Aspiring GenAI Developer
 
 ---
 
-*Built with Python as a hands-on project to strengthen programming and OOP fundamentals.*
+⭐ If you find this project useful, consider giving this repository a star!
+
+**#Python #PythonProjects #OOP #LibraryManagementSystem #GenAI**
